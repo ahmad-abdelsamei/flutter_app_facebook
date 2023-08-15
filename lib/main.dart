@@ -1,241 +1,84 @@
-// ignore_for_file: prefer_const_constructors
+
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-
 void main() {
   runApp(const MyApp());
 }
-
+ 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
+ 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: FacebookApp(),
       debugShowCheckedModeBanner: false,
+      home: English(),
     );
   }
 }
 
-class FacebookApp extends StatelessWidget {
-  const FacebookApp({Key? key}) : super(key: key);
+
+class English extends StatelessWidget {
+  const English({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("facebook",
-              style: TextStyle(
-                  color: Colors.blueAccent,
-                  fontSize: 27,
-                  fontWeight: FontWeight.w700)),
-          centerTitle: true,
-          leading: IconButton(
-            icon: Icon(
-              Icons.menu,
-              color: Colors.blueAccent,
-              size: 30,
-            ),
-            onPressed: () {},
+      backgroundColor: Colors.grey[900],
+      appBar: AppBar(
+        elevation: 0,
+        centerTitle: true,
+        backgroundColor: Colors.grey[850],
+        title: Text(
+          "flutter"
           ),
-          actions: [
-            IconButton(
-                icon: Icon(
-                  Icons.message,
-                  color: Colors.blueAccent,
-                  size: 30,
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            margin: EdgeInsets.only(top: 33),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                CircleAvatar(
+                  radius: 66,
+                  backgroundImage: AssetImage( "assets/img/ahmad.jpg")
                 ),
-                onPressed: () {}),
-            IconButton(
-              icon: Icon(
-                Icons.search,
-                color: Colors.blueAccent,
-                size: 30,
-              ),
-              onPressed: () {},
+                SizedBox(width: 22,),
+                Icon(Icons.verified, color: Colors.blue[100], size: 27,),
+              ],
             ),
-          ],
-          backgroundColor: Colors.white,
-          elevation: 20,
-        ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                margin: EdgeInsets.only(bottom: 22),
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.black,
-                ),
-                height: 322,
-                width: double.infinity,
-                child: Text(
-                  "بسم الله الرحمن الرحيم",
-                  style: TextStyle(color: Colors.white, fontSize: 44),
-                ),
-              ),
-              Container(
-                color: Colors.red,
-                width: 250,
-                height: 500,
-                child: Center(
-                  child: Wrap(
-                    direction: Axis.vertical,
-                    spacing: 10,
-                    runSpacing: 11,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          "a",
-                          style: TextStyle(fontSize: 27),
-                        ),
-                        style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15))),
-                          padding:
-                              MaterialStateProperty.all(EdgeInsets.fromLTRB(34, 34, 34, 50)),
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.black),
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          "h",
-                          style: TextStyle(fontSize: 27),
-                        ),
-                        style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15))),
-                          padding:
-                              MaterialStateProperty.all(EdgeInsets.fromLTRB(34, 45, 34, 34)),
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.black),
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          "m",
-                          style: TextStyle(fontSize: 27),
-                        ),
-                        style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15))),
-                          padding:
-                              MaterialStateProperty.all(EdgeInsets.fromLTRB(34, 34, 34, 50)),
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.black),
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          "d",
-                          style: TextStyle(fontSize: 27),
-                        ),
-                        style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15))),
-                          padding:
-                              MaterialStateProperty.all(EdgeInsets.fromLTRB(34, 34, 34, 45)),
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.black),
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          "أ",
-                          style: TextStyle(fontSize: 27),
-                        ),
-                        style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15))),
-                          padding:
-                              MaterialStateProperty.all(EdgeInsets.all(34)),
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.black54),
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          "ح",
-                               style: TextStyle(fontSize: 27),
-                        ),
-                        style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15))),
-                          padding:
-                              MaterialStateProperty.all(EdgeInsets.all(34)),
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.black54),
-                        ),
-                      ),    
-                     ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          "م",
-                          style: TextStyle(fontSize: 27),
-                        ),
-                        style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15))),
-                          padding:
-                              MaterialStateProperty.all(EdgeInsets.all(34)),
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.black54),
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          "د",
-                          style: TextStyle(fontSize: 27),
-                        ),
-                        style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15))),
-                          padding:
-                              MaterialStateProperty.all(EdgeInsets.all(34)),
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.black54),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 20),
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.black54,
-                ),
-                height: 322,
-                width: double.infinity,
-                child: Text(
-                  "see you soon",
-                  style: TextStyle(color: Colors.white, fontSize: 44),
-                ),
-              )
-            ],
           ),
-        ));
+          Padding(
+            padding: const EdgeInsets.only(left: 27),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 50,),
+                Text("Name : ", style: TextStyle(color: Colors.grey[50], fontSize: 30),),
+                SizedBox(height: 10,),
+                Text("Ahmad elsayed", style: TextStyle(fontWeight: FontWeight.w900 ,fontFamily: "ahmad", color: Colors.amberAccent, fontSize: 44),),
+                SizedBox(height: 33,),
+                Text("Current Level : ", style: TextStyle(color: Colors.grey[50], fontSize: 30),),
+                SizedBox(height: 10,),
+                Text("Advanced", style: TextStyle(fontWeight: FontWeight.w900 ,fontFamily: "ahmad", color: Colors.amberAccent, fontSize: 44),),
+                SizedBox(height: 33,),
+                Row(
+                  children: [
+                    Icon(Icons.email, color: Colors.grey[50], size: 27,),
+                    SizedBox(width: 17,),
+                    Text("ahmad@gmail.com",  style: TextStyle(color: Colors.grey[50], fontSize: 21))
+                  ],
+                )
+              
+              ],
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
-// direction → Axis.
- 

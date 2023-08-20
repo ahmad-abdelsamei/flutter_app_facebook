@@ -1,84 +1,87 @@
-
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+
 void main() {
   runApp(const MyApp());
 }
- 
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
- 
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      home: LoginForm(),
       debugShowCheckedModeBanner: false,
-      home: English(),
     );
   }
 }
 
-
-class English extends StatelessWidget {
-  const English({ Key? key }) : super(key: key);
+class LoginForm extends StatelessWidget {
+  const LoginForm({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[900],
-      appBar: AppBar(
-        elevation: 0,
-        centerTitle: true,
-        backgroundColor: Colors.grey[850],
-        title: Text(
-          "flutter"
-          ),
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        body: SizedBox(
+      width: double.infinity,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            margin: EdgeInsets.only(top: 33),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                CircleAvatar(
-                  radius: 66,
-                  backgroundImage: AssetImage( "assets/img/ahmad.jpg")
-                ),
-                SizedBox(width: 22,),
-                Icon(Icons.verified, color: Colors.blue[100], size: 27,),
-              ],
+              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 9),
+              decoration: BoxDecoration(
+                  color: Colors.purple[100],
+                  borderRadius: BorderRadius.circular(66)),
+              width: 266,
+              child: TextField(
+                       textInputAction: TextInputAction.next ,
+                  decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: "Email : ",
+                hintStyle: TextStyle(fontSize: 19),
+                prefixIcon: Icon(Icons.person),
+              ))),
+          Container(
+              margin: EdgeInsets.symmetric(vertical: 27),
+              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 9),
+              decoration: BoxDecoration(
+                  color: Colors.purple[100],
+                  borderRadius: BorderRadius.circular(66)),
+              width: 266,
+              child: TextField(
+                       textInputAction: TextInputAction.done ,
+                keyboardType: TextInputType.emailAddress,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: "Password :  ",
+                    hintStyle: TextStyle(fontSize: 19),
+                    prefixIcon: Icon(Icons.lock),
+                    suffixIcon: Icon(Icons.visibility),
+                  ))),
+          
+          
+          
+          
+          ElevatedButton(
+            onPressed: () {},
+            
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Colors.purple),
+              padding: MaterialStateProperty.all(EdgeInsets.symmetric(horizontal: 99, vertical: 15)),
+              shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(66))),
+            ),
+            child: Text(
+              "Log in",
+              style: TextStyle(fontSize: 27),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 27),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: 50,),
-                Text("Name : ", style: TextStyle(color: Colors.grey[50], fontSize: 30),),
-                SizedBox(height: 10,),
-                Text("Ahmad elsayed", style: TextStyle(fontWeight: FontWeight.w900 ,fontFamily: "ahmad", color: Colors.amberAccent, fontSize: 44),),
-                SizedBox(height: 33,),
-                Text("Current Level : ", style: TextStyle(color: Colors.grey[50], fontSize: 30),),
-                SizedBox(height: 10,),
-                Text("Advanced", style: TextStyle(fontWeight: FontWeight.w900 ,fontFamily: "ahmad", color: Colors.amberAccent, fontSize: 44),),
-                SizedBox(height: 33,),
-                Row(
-                  children: [
-                    Icon(Icons.email, color: Colors.grey[50], size: 27,),
-                    SizedBox(width: 17,),
-                    Text("ahmad@gmail.com",  style: TextStyle(color: Colors.grey[50], fontSize: 21))
-                  ],
-                )
-              
-              ],
-            ),
-          )
         ],
       ),
-    );
+    ));
   }
 }
